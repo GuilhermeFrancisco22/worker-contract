@@ -1,14 +1,22 @@
 package application;
 
-import enties.enums.OrderStatus;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(OrderStatus.SHIPPED);
-        OrderStatus status1 = OrderStatus.PROCESSING;
-        OrderStatus status2 = OrderStatus.valueOf("PROCESSING");
-
-        System.out.println(status2);
-        System.out.println(status1);
+        // Formatar a minha data com o padrao que precisp
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Scanner sc = new Scanner(System.in);
+        Date data;
+        try {
+            data = sdf.parse("22/12/2023");
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        sc.close();
     }
 }
